@@ -3,6 +3,8 @@ import { useLoaderData } from 'react-router';
 import ServiceCard from '../component/ServiceCard';
 import bannerImg from '../assets/bannerImg.webp'; 
 import MyContainer from '../component/MyContainer';
+import WinterCare from '../component/WinterCare';
+import Experts from '../component/Experts';
 
 
 const Home = () => {
@@ -10,8 +12,10 @@ const Home = () => {
     console.log(data)
     return (
        <MyContainer>
-<div className="grid grid-cols-4 gap-3 items-start mt-15">
-  {/* 3 columns for service cards */}
+        <h1 className="text-3xl font-bold my-5 ml-95 text-blue-900">Popular Winter Care Services</h1>
+<div className="grid grid-cols-4 gap-3 items-start mt-10">
+    
+  
   <div className="col-span-3 grid grid-cols-3 gap-6">
     {data.map(service => (
       <ServiceCard
@@ -21,7 +25,7 @@ const Home = () => {
     ))}
   </div>
 
-  {/* 1 column for image */}
+ 
   <div className="col-span-1 flex justify-center items-center">
     <img
       src={bannerImg}
@@ -30,7 +34,10 @@ const Home = () => {
     />
   </div>
 </div>
+<WinterCare></WinterCare>
+<Experts></Experts>
        </MyContainer>
+       
    
 
 
