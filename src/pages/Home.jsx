@@ -1,0 +1,42 @@
+import React from 'react';
+import { useLoaderData } from 'react-router';
+import ServiceCard from '../component/ServiceCard';
+import bannerImg from '../assets/bannerImg.webp'; 
+import MyContainer from '../component/MyContainer';
+
+
+const Home = () => {
+    const data = useLoaderData();
+    console.log(data)
+    return (
+       <MyContainer>
+<div className="grid grid-cols-4 gap-3 items-start mt-15">
+  {/* 3 columns for service cards */}
+  <div className="col-span-3 grid grid-cols-3 gap-6">
+    {data.map(service => (
+      <ServiceCard
+        key={service.serviceId}
+        service={service}
+      />
+    ))}
+  </div>
+
+  {/* 1 column for image */}
+  <div className="col-span-1 flex justify-center items-center">
+    <img
+      src={bannerImg}
+      alt="Winter pets"
+      className="mt-60 w-full h-auto object-cover"
+    />
+  </div>
+</div>
+       </MyContainer>
+   
+
+
+        
+    );
+};
+
+export default Home;
+

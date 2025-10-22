@@ -1,0 +1,80 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.ibb.co/ycmmh97Y/1.jpg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.ibb.co/B247w4my/2.jpg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Kennel Setup Service",
+    "providerName": "WarmPaws Solutions",
+    "providerEmail": "contact@warmpaws.com",
+    "price": 45,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Installation of heated pads and insulation for kennels and pet houses.",
+    "image": "https://i.ibb.co/GwyZvkD/3.jpg",
+    "category": "Comfort"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Nutrient-Rich Winter Meal Plan",
+    "providerName": "HealthyTail Nutrition",
+    "providerEmail": "support@healthytail.com",
+    "price": 35,
+    "rating": 4.9,
+    "slotsAvailable": 6,
+    "description": "Customized winter diet plans rich in vitamins and healthy fats for extra warmth and energy.",
+    "image": "https://i.ibb.co/RkL1xCWV/4.jpg",
+    "category": "Nutrition"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Winter Walk Assistance",
+    "providerName": "FrostyFriends Walkers",
+    "providerEmail": "walks@frostyfriends.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 7,
+    "description": "Safe and supervised walks in winter gear to ensure pets enjoy the outdoors safely.",
+    "image": "https://i.ibb.co/ynycJFbN/5.jpg",
+    "category": "Exercise"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Winter Health Checkup",
+    "providerName": "VetCare Clinic",
+    "providerEmail": "appointments@vetcareclinic.com",
+    "price": 50,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Comprehensive seasonal health examination focusing on joint health, skin, and immune system.",
+    "image": "https://i.ibb.co/gM65dcrM/6.jpg",
+    "category": "Health"
+  }
+]
+
+
+
+
+
+

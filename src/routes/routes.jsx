@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../layouts/MainLayout";
-import Home from "../component/Home";
-import Services from './../component/Services';
-import Profile from "../component/Profile";
+import Home from "../pages/Home";
+import Services from '../pages/Services';
+import Profile from "../pages/Profile";
 
 export const router = createBrowserRouter(([
     {
@@ -12,7 +12,8 @@ export const router = createBrowserRouter(([
         [
             {
                 index: true,
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader: ()=>fetch('/petServices.json')
             },
             {
                 path: '/services',
