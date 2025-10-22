@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Services from '../pages/Services';
 import Profile from "../pages/Profile";
+import ServiceDetails from "../pages/ServiceDetails";
 
 export const router = createBrowserRouter(([
     {
@@ -28,7 +29,13 @@ export const router = createBrowserRouter(([
 
 
 
-    }
+    },
+     {
+                path: '/services/:id',
+                element:<ServiceDetails></ServiceDetails>,
+                loader: ()=>fetch('/petServices.json')
+            },
+
 
 
 ]))

@@ -1,6 +1,6 @@
 [
   {
-    "serviceId": 1,
+    "id": 1,
     "serviceName": "Winter Coat Fitting for Dogs",
     "providerName": "PawCare Studio",
     "providerEmail": "info@pawcare.com",
@@ -12,7 +12,7 @@
     "category": "Clothing"
   },
   {
-    "serviceId": 2,
+    "id": 2,
     "serviceName": "Winter Grooming & Paw Treatment",
     "providerName": "CozyPets Grooming",
     "providerEmail": "hello@cozypets.com",
@@ -24,7 +24,7 @@
     "category": "Grooming"
   },
   {
-    "serviceId": 3,
+    "id": 3,
     "serviceName": "Heated Kennel Setup Service",
     "providerName": "WarmPaws Solutions",
     "providerEmail": "contact@warmpaws.com",
@@ -36,7 +36,7 @@
     "category": "Comfort"
   },
   {
-    "serviceId": 4,
+    "id": 4,
     "serviceName": "Nutrient-Rich Winter Meal Plan",
     "providerName": "HealthyTail Nutrition",
     "providerEmail": "support@healthytail.com",
@@ -48,7 +48,7 @@
     "category": "Nutrition"
   },
   {
-    "serviceId": 5,
+    "id": 5,
     "serviceName": "Winter Walk Assistance",
     "providerName": "FrostyFriends Walkers",
     "providerEmail": "walks@frostyfriends.com",
@@ -60,7 +60,7 @@
     "category": "Exercise"
   },
   {
-    "serviceId": 6,
+    "id": 6,
     "serviceName": "Winter Health Checkup",
     "providerName": "VetCare Clinic",
     "providerEmail": "appointments@vetcareclinic.com",

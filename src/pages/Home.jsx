@@ -9,7 +9,7 @@ import Experts from '../component/Experts';
 
 const Home = () => {
     const data = useLoaderData();
-    console.log(data)
+    
     return (
        <MyContainer>
         <h1 className="text-3xl font-bold my-5 ml-95 text-blue-900">Popular Winter Care Services</h1>
@@ -19,7 +19,7 @@ const Home = () => {
   <div className="col-span-3 grid grid-cols-3 gap-6">
     {data.map(service => (
       <ServiceCard
-        key={service.serviceId}
+        key={service.id}
         service={service}
       />
     ))}
