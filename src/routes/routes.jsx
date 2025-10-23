@@ -4,6 +4,9 @@ import Home from "../pages/Home";
 import Services from '../pages/Services';
 import Profile from "../pages/Profile";
 import ServiceDetails from "../pages/ServiceDetails";
+import Signin from "../pages/Signin";
+import SignUp from "../pages/SignUp";
+import AuthLayout from './../layouts/AuthLayout';
 
 export const router = createBrowserRouter(([
     {
@@ -30,11 +33,29 @@ export const router = createBrowserRouter(([
 
 
     },
-     {
+            {
                 path: '/services/:id',
                 element:<ServiceDetails></ServiceDetails>,
                 loader: ()=>fetch('/petServices.json')
             },
+            
+             {
+                path: '/auth',
+                element:<AuthLayout></AuthLayout>,
+                children:[
+                     {
+                path: '/auth/signin',
+                element:<Signin></Signin>,
+                    },
+                     {
+                path: '/auth/signup',
+                element:<SignUp></SignUp>,
+                    },
+                ]
+                
+            },
+
+
 
 
 

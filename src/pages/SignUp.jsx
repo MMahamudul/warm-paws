@@ -1,0 +1,83 @@
+import React from 'react';
+import MyContainer from '../component/MyContainer';
+import { Link } from 'react-router';
+import { use } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
+import toast from "react-hot-toast";
+
+const SignUp = () => {
+  const {createUser, setUser} = use(AuthContext);
+
+  const handleSignUp = (e) =>{
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    /* const photo = form.photo.value;
+    const name= form.name.value; */
+  
+    createUser(email, password)
+    .then((res) => {
+        toast.success('Registration successful');
+        setUser(res.email)
+        
+      })
+    .then(error=>toast.error(error.message))
+    
+
+  }
+    return (
+   <MyContainer>
+      <div className="hero min-h-screen">
+  <div className="hero-content flex-col lg:flex-row gap-35">
+    <div className=" lg:text-left">
+      
+      
+    </div>
+    <div className="card bg-base-100 w-full max-w-sm shrink-0 ">
+      <h1 className="text-lg text-center mt-2 py-2">Register Account</h1>
+      <form onSubmit= {handleSignUp} className="card-body">
+        <fieldset className="fieldset">
+          <label className="label">Name</label>
+          <input 
+          type="text" 
+          className="input" 
+          name="name" 
+          placeholder="Name"
+          required />
+          <label className="label">Email</label>
+          <input 
+          type="email" 
+          className="input" 
+          name="email" 
+          placeholder="Email"
+          required />
+          <label className="label">Photo Url</label>
+          <input 
+          type="text" 
+          className="input" 
+          name="photo" 
+          placeholder="Photo Url"
+          required />
+          <label className="label">Password</label>
+          <input 
+          type="password" 
+          className="input" 
+          name="password" 
+          placeholder="Password"
+          required />
+          <button type="submit" className="btn mr-3 bg-blue-900 text-white my-2 px-6 py-2 text-sm hover:bg-blue-800 transition">Register</button>
+          <p className='text-center my-2'>Already have an account?</p>
+          <p>If you already have an account with us, please login at the <Link to="/auth/signin" className=" text-blue-600 ">login page</Link>.</p>
+          
+          
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+       </MyContainer>
+    );
+};
+
+export default SignUp;

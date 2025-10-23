@@ -1,15 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router'; 
+import { Link } from 'react-router'; 
 import logo from '../assets/logo.png'; 
 import MyContainer from './MyContainer';
 import MyLink from './MyLink';
 import { RxAvatar } from 'react-icons/rx'; 
+import { use } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
 
 
 const Navbar = () => {
+  const {user, logOut} = use(AuthContext);
+  const handleSignOut =()=>{
+    logOut()
+
+  }
     return (
         <div className='bg-[#b3d9e6] '>
             <MyContainer className="navbar ">
+              {user && user.email}
   <div className="navbar-start ">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,7 +60,8 @@ const Navbar = () => {
   </div>
   <div className="navbar-end flex gap-2">
     <span className=" text-sky-900"><RxAvatar size={40}/></span>
-    <NavLink to='' className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">Signin</NavLink>
+    {user ? <button onClick={handleSignOut} className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">SignOut</button> : <Link to='/auth/signin' className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">SignIn</Link>}
+    
   </div>
 </MyContainer>
         </div>
