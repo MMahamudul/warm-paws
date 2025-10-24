@@ -50,7 +50,7 @@ const HeroSlider = () => {
               style={{ backgroundImage: `url(${slide.img})` }}
             >
               {/* Blue Frost Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-900/60 to-blue-950/70"></div>
+              <div className="absolute inset-0 "></div>
 
               {/* Slide Content */}
               <div className="relative z-10 text-center text-blue-100 px-6 drop-shadow-lg">
@@ -73,3 +73,5 @@ const HeroSlider = () => {
 };
 
 export default HeroSlider;
+
+

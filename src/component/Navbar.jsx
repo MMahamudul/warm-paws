@@ -60,8 +60,12 @@ const Navbar = () => {
     </nav>
   </div>
   <div className="navbar-end flex gap-2">
-    <img className='rounded-full w-10 h-10' src={`${user ? user.photoURL : icon}`} alt="" />
-    
+    <img
+  title={user ? user.displayName || user.email : ""}
+  className="rounded-full w-10 h-10 cursor-pointer"
+  src={user ? user.photoURL : icon}
+  alt="profile"
+/>
     
     {user ? <button onClick={handleSignOut} className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">SignOut</button> : <Link to='/auth/signin' className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">SignIn</Link>}
     
