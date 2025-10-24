@@ -7,12 +7,15 @@ import MyLink from './MyLink';
 import { RxAvatar } from 'react-icons/rx'; 
 import { use } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
+import { useNavigate } from 'react-router';
 
 
 const Navbar = () => {
   const {user, logOut} = use(AuthContext);
+  const navigate = useNavigate();
   const handleSignOut =()=>{
-    logOut()
+    logOut();
+    navigate("/"); 
 
   }
     return (

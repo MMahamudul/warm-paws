@@ -1,12 +1,37 @@
 import React, { useState } from 'react';
-import { useSpring, animated } from '@react-spring/web';
+import { useSpring, animated} from '@react-spring/web';
 import { AuthContext } from './../provider/AuthProvider';
 import { use } from 'react';
+import toast from 'react-hot-toast';
+
+
 
 const Profile = () => {
-    const {user} = use(AuthContext);
+    const {user, updateUser, setUser,} = use(AuthContext);
   const [isEditing, setIsEditing] = useState(false);
   
+
+  const handleProfileUpdate = (e) =>{
+    e.preventDefault();
+    const form = e.target;
+    const photo = form.photo.value;
+    const name= form.name.value;
+    updateUser({displayName:name, photoURL: photo})
+        .then(()=>{
+        setUser({...user, displayName:name, photoURL: photo });
+        toast.success("Profile updated successfully!");
+        form.reset();
+        setIsEditing(false);
+        
+        
+        })
+        .catch((error)=>{
+          const errorMessage = error.message;
+          const errorCode = error.code;
+        toast.error(errorCode, errorMessage);
+        setUser(user);
+        })
+  }
 
   
   const fadeIn = useSpring({
@@ -53,13 +78,14 @@ const Profile = () => {
         
         <animated.div style={formAnimation}>
           {isEditing && (
-            <form className="mt-6 flex flex-col gap-4 text-left">
+            <form onSubmit= {handleProfileUpdate} className="mt-6 flex flex-col gap-4 text-left">
               <div>
                 <label className="block text-sm text-blue-900 font-medium mb-1">
                   Full Name
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Enter your name"
                   className="w-full border border-blue-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -71,14 +97,15 @@ const Profile = () => {
                 </label>
                 <input
                   type="text"
+                  name="photo"
                   placeholder="Enter photo URL"
                   className="w-full border border-blue-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
               <button
-                type="button"
-                className="mt-4 bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition duration-300 w-full"
+                type="submit"
+                 className="mt-4 bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition duration-300 w-full"
               >
                 Save Changes
               </button>

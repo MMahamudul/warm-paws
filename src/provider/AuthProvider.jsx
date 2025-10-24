@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 
 
+
 export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
 
@@ -13,6 +14,7 @@ const auth = getAuth(app);
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    
     
     
     const createUser = (email, password) =>{
@@ -24,6 +26,7 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
         .then(() => {
         toast.success('You Sign Out Successful');
+        
         
         
       })
