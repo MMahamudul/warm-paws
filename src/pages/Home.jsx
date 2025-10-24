@@ -5,6 +5,8 @@ import bannerImg from '../assets/bannerImg.webp';
 import MyContainer from '../component/MyContainer';
 import WinterCare from '../component/WinterCare';
 import Experts from '../component/Experts';
+import HeroSlider from '../component/HeroSlider';
+import WinterEssentials from '../component/WinterEssentials';
 
 
 const Home = () => {
@@ -12,6 +14,7 @@ const Home = () => {
     
     return (
        <MyContainer>
+        <HeroSlider></HeroSlider>
         <h1 className="text-3xl font-bold my-5 ml-95 text-blue-900">Popular Winter Care Services</h1>
 <div className="grid grid-cols-4 gap-3 items-start mt-10">
     
@@ -36,6 +39,7 @@ const Home = () => {
 </div>
 <WinterCare></WinterCare>
 <Experts></Experts>
+<WinterEssentials></WinterEssentials>
        </MyContainer>
        
    

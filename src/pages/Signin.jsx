@@ -45,7 +45,7 @@ const Signin = () => {
       
       
     </div>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0  ">
+    <div className="card bg-base-100 w-full max-w-sm shrink-0 border-2 border-blue-50 shadow-xl rounded-md ">
       <h1 className="text-2xl font-semibold text-center mt-2 py-1">Account Login</h1>
       <form onSubmit={handleSignIn} className="card-body">
         <fieldset className="fieldset">
