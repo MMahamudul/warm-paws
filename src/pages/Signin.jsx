@@ -8,12 +8,33 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaEye } from 'react-icons/fa6';
 import { IoIosEyeOff } from 'react-icons/io';
 
+
+
+
+
 const Signin = () => {
+  
   const [error, setError] = useState('');
-  const {logIn} = use(AuthContext);
+  const {logIn, googleSignIn} = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
+  
+
+  const handleGoogleLogIn = () =>{
+    googleSignIn()
+    .then((res)=>{console.log(res.user);
+      navigate('/');
+    })
+    .catch((error)=>{
+       const errorMessage = error.message;
+      toast.error(errorMessage);
+
+    })
+  }
+    
+
+
 
   const handleSignIn =(e)=>{
     e.preventDefault();
@@ -72,7 +93,7 @@ const Signin = () => {
           
           <div><Link className="link link-hover text-blue-900 font-bold my-6">Forgot password?</Link></div>
           <button className="btn bg-blue-900 text-white rounded-sm py-2 px-6 my-3 text-lg hover:bg-blue-800 transition">Login</button>
-          <Link className="btn btn-outline bg-base-100 text-blue-600 rounded-sm py-2 px-6 my-3 text-lg hover:bg-blue-900 hover:text-white transition"><FcGoogle size={24}/>Login With Google</Link>
+          <Link onClick={handleGoogleLogIn} className="btn btn-outline bg-base-100 text-blue-600 rounded-sm py-2 px-6 my-3 text-lg hover:bg-blue-900 hover:text-white transition"><FcGoogle size={24}/>Login With Google</Link>
           {error && <p className='text-sm text-red-600'>{error}</p>}
           <p className='text-sm text-blue-950 font-semibold'>Don't have an account?</p>
           <Link to="/auth/signup" className="btn btn-outline bg-base-100 text-blue-600 rounded-sm py-2 px-6 my-3 text-lg hover:bg-blue-900 hover:text-white transition">Create Your Account</Link>

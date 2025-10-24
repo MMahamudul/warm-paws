@@ -7,7 +7,7 @@ const WinterEssentials = () => {
     {
       id: 1,
       name: "Cozy Sweater",
-      image: "https://i.ibb.co/mFRg44Sq/sweat.jpg",
+      image: "https://i.ibb.co/YT426kHC/1742075926-0340-0340.jpg",
       description: "Keep your pet warm and stylish this winter.",
       
 
@@ -17,19 +17,19 @@ const WinterEssentials = () => {
     {
       id: 2,
       name: "Heated Bed",
-      image: "https://i.ibb.co/bR1Z98yh/Bed.jpg",
-      description: "Soft and warm bed for cold nights.",
+      image: "https://i.ibb.co/HL5Nzvss/Rywell-Heated-Cat-Bed-07.jpg",
+      description: "Soft and warm bed for cold days and nights.",
     },
     {
       id: 3,
       name: "Paw Protection Boots",
-      image: "https://i.ibb.co/WpR7trBX/Paw.jpg",
+      image: "https://i.ibb.co/mFYQVBRj/Dog-Socks-for-Hardwood-Floors-to-Prevent-Licking-Dog-Boots-Paw-Protector-with-Non-Anti-Slip-Dog-Grip.jpg",
       description: "Protect your pet’s paws from snow and ice.",
     },
     {
       id: 4,
       name: "Moisturizing Balm",
-      image: "https://i.ibb.co/1GByXcQW/balm.webp",
+      image: "https://i.ibb.co/YFb0KkMC/balm.webp",
       description: "Keep your pet’s skin soft and hydrated.",
     },
   ];
@@ -59,6 +59,7 @@ const WinterEssentials = () => {
                 </h3>
                 <p className="text-sm text-gray-700">{item.description}</p>
               </div>
+              <button className="btn bg-blue-900 text-white rounded-sm py-2 px-6 my-3 text-sm hover:bg-blue-800 transition w-11/12">Order Now</button>
             </div>
           ))}
         </div>

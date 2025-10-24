@@ -16,7 +16,7 @@ const Navbar = () => {
 
   }
     return (
-        <div className='bg-[#b3d9e6] '>
+        <div className=''>
             <MyContainer className="navbar ">
               {/* {user && user.email} */}
   <div className="navbar-start ">

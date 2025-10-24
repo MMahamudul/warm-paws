@@ -8,14 +8,14 @@ const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   
 
-  // Animation for profile card load
+  
   const fadeIn = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
     config: { tension: 150, friction: 20 },
   });
 
-  // Animation for form reveal
+  
   const formAnimation = useSpring({
     opacity: isEditing ? 1 : 0,
     height: isEditing ? 'auto' : 0,
@@ -30,19 +30,19 @@ const Profile = () => {
         style={fadeIn}
         className="bg-[#e6f3f8] shadow-xl rounded-lg p-8 w-full max-w-md text-center border border-blue-100"
       >
-        {/* Profile Picture */}
+        
         <div className="flex justify-center mb-4">
-          <div className="rounded-full bg-blue-200 flex items-center justify-center text-blue-900 text-3xl font-bold shadow-md">
-            {/* Placeholder initials */}
-            <img className="w-28 h-28 rounded-full " src={user && user.photoURL} alt="Profile Picture" />
+          <div className="rounded-full bg-blue-200 flex items-center justify-center text-blue-900 text-sm  shadow-md">
+           
+            <img className="w-28 h-28 rounded-full " src={user && user.photoURL} alt="" />
           </div>
         </div>
 
-        {/* User Info (static placeholders) */}
+        
         <h2 className="text-2xl font-semibold text-blue-900 mb-2">{user && user.displayName}</h2>
         <p className="text-gray-700 mb-6">{user && user.email}</p>
 
-        {/* Toggle Button */}
+       
         <button
           onClick={() => setIsEditing(!isEditing)}
           className="bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition duration-300"
@@ -50,7 +50,7 @@ const Profile = () => {
           {isEditing ? 'Cancel' : 'Update Profile'}
         </button>
 
-        {/* Animated Update Form (design only) */}
+        
         <animated.div style={formAnimation}>
           {isEditing && (
             <form className="mt-6 flex flex-col gap-4 text-left">

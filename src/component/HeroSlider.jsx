@@ -32,7 +32,7 @@ const HeroSlider = () => {
 
 
   return (
-    <div className="w-full h-[80vh] relative">
+    <div className="w-full h-[80vh] relative mt-5">
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade"
@@ -49,10 +49,10 @@ const HeroSlider = () => {
               className="w-full h-full bg-cover bg-center relative flex items-center justify-center"
               style={{ backgroundImage: `url(${slide.img})` }}
             >
-              {/* Blue Frost Overlay */}
+              
               <div className="absolute inset-0 "></div>
 
-              {/* Slide Content */}
+             
               <div className="relative z-10 text-center text-blue-100 px-6 drop-shadow-lg">
                 <h2 className="text-4xl md:text-6xl font-bold mb-4 text-blue-100">
                   {slide.title}

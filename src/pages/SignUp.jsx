@@ -7,11 +7,24 @@ import toast from "react-hot-toast";
 import { useState } from 'react';
 import { FaEye } from 'react-icons/fa';
 import { IoIosEyeOff } from 'react-icons/io';
+import { FcGoogle } from 'react-icons/fc';
 
 const SignUp = () => {
-  const {createUser, setUser, updateUser} = use(AuthContext);
+  const {createUser, setUser, updateUser, googleSignIn} = use(AuthContext);
   const navigate = useNavigate();
   const [show, setShow] = useState(false)
+
+  const handleGoogleLogIn = () =>{
+    googleSignIn()
+    .then((res)=>{console.log(res.user);
+      navigate('/');
+    })
+    .catch((error)=>{
+       const errorMessage = error.message;
+      toast.error(errorMessage);
+
+    })
+  }
 
   const handleSignUp = (e) =>{
     e.preventDefault();
@@ -69,21 +82,21 @@ const SignUp = () => {
           <label className="label">Name</label>
           <input 
           type="text" 
-          className="input" 
+          className="input w-full" 
           name="name" 
           placeholder="Name"
           required />
-          <label className="label">Email</label>
+          <label className="label ">Email</label>
           <input 
           type="email" 
-          className="input" 
+          className="input w-full" 
           name="email" 
           placeholder="Email"
           required />
           <label className="label">Photo Url</label>
           <input 
           type="text" 
-          className="input" 
+          className="input w-full" 
           name="photo" 
           placeholder="Photo Url"
           required />
@@ -91,7 +104,7 @@ const SignUp = () => {
              <label className="label">Password</label>
           <input 
           type={show ? 'text' : 'password'}
-          className="input" 
+          className="input w-full" 
           name="password" 
           placeholder="Password"
           required />
@@ -102,7 +115,8 @@ const SignUp = () => {
 
           </div>
          
-          <button type="submit" className="btn mr-3 bg-blue-900 text-white my-2 px-6 py-2 text-sm hover:bg-blue-800 transition">Register</button>
+          <button type="submit" className="btn mr-3 bg-blue-900 text-white my-2 px-6 py-2 text-sm hover:bg-blue-800 transition w-full">Register</button>
+          <Link onClick={handleGoogleLogIn} className="btn btn-outline bg-base-100 text-blue-600 rounded-sm py-2 px-6 my-1 text-sm hover:bg-blue-900 hover:text-white transition"><FcGoogle size={24}/>Login With Google</Link>
           <p className='text-center my-2'>Already have an account?</p>
           <p>If you already have an account with us, please login at the <Link to="/auth/signin" className=" text-blue-600 ">login page</Link>.</p>
           
