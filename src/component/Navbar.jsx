@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router'; 
 import logo from '../assets/logo.png'; 
+import icon from '../assets/icon.png'; 
 import MyContainer from './MyContainer';
 import MyLink from './MyLink';
 import { RxAvatar } from 'react-icons/rx'; 
@@ -17,7 +18,7 @@ const Navbar = () => {
     return (
         <div className='bg-[#b3d9e6] '>
             <MyContainer className="navbar ">
-              {user && user.email}
+              {/* {user && user.email} */}
   <div className="navbar-start ">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -59,7 +60,9 @@ const Navbar = () => {
     </nav>
   </div>
   <div className="navbar-end flex gap-2">
-    <span className=" text-sky-900"><RxAvatar size={40}/></span>
+    <img className='rounded-full w-10 h-10' src={`${user ? user.photoURL : icon}`} alt="" />
+    
+    
     {user ? <button onClick={handleSignOut} className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">SignOut</button> : <Link to='/auth/signin' className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">SignIn</Link>}
     
   </div>

@@ -23,7 +23,7 @@ const ServiceCard = ({service}) => {
       {description}
     </p>
 
-    <Link to= {`/services/${id}`} className="btn bg-blue-900 text-white px-5 py-2 text-sm font-medium hover:bg-blue-950 rounded-full">
+    <Link to= {`/products/${id}`} className="btn bg-blue-900 text-white px-5 py-2 text-sm font-medium hover:bg-blue-950 rounded-full">
       View Details
     </Link>
 

@@ -1,7 +1,16 @@
 import React from 'react';
+import toast from "react-hot-toast";
+import { Link } from 'react-router';
 
 const Items = ({service}) => {
     const {image, description, serviceName, price, providerName} = service;
+    
+
+const handleBooking = (e) => {
+  e.preventDefault();
+  e.target.reset(); 
+  toast.success("Awesome !! Your Booking was Successful");
+};
     return (
         
                 
@@ -9,9 +18,9 @@ const Items = ({service}) => {
 
     <div className="bg-gray-50 min-h-screen py-10 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
+       
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-blue-700">{serviceName}</h1>
+          <h1 className="text-5xl font-bold text-blue-950">{serviceName}</h1>
           
         </div>
 
@@ -26,51 +35,60 @@ const Items = ({service}) => {
 
           
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-3">What’s Included</h2>
-            <p className="text-gray-600 mb-4">
+            <h2 className="text-3xl font-bold text-blue-800 mb-3">What’s Included</h2>
+            <p className="text-blue-600 mb-4 text-lg font-semibold">
               {description}
             </p>
 
-            {/* Features */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 text-gray-700">
-              <li>Service Provider: {providerName}</li>
+            
+            <div className="flex gap-2 mt-4">
+              <h2 className='text-black text-lg font-semibold'>Service Provider:
+                <span className=" text-lg text-blue-700">  {providerName}</span> </h2>
               
-            </ul>
+            </div>
 
-            <p className="mt-6 text-lg font-bold text-blue-700">${price} / session</p>
+            <p className="mt-6   text-black text-lg font-semibold">Rate: 
+              <span className=" text-blue-800 text-lg">  €{price}/session</span>
+              </p>
           </div>
+          <Link to="/" className='btn w-3/12 md:col-span-2 bg-blue-900 text-white text-lg  font-semibold py-6 rounded-sm'>Return To Home</Link>
         </div>
 
-        {/* Booking Form */}
-        <form className="mt-16 bg-white shadow-lg rounded-lg p-8">
+        
+        <form onSubmit={handleBooking} className="bg-blue-100 mt-6  p-8 border-2 border-blue-100 shadow-lg rounded-sm">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Book This Service</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-6">
             <input
               type="text"
               placeholder="Your Name"
-              className="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500"
+              className="border border-blue-800 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500"
+              required
             />
             <input
               type="email"
               placeholder="Your Email"
-              className="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500"
+              className="border border-blue-800  rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500"
+              required
             />
             <input
               type="tel"
               placeholder="Phone Number"
-              className="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500"
+              className="border border-blue-800  rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500"
+              required
             />
             <input
               type="tel"
               placeholder="Service"
-              className="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500"
+              className="border border-blue-800  rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500"
+              required
             />
             
 
             <button
               type="submit"
-              className="md:col-span-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+              className="w-2/12 mx-auto md:col-span-2 bg-blue-900 text-white py-3 text-lg  font-semibold rounded-sm hover:bg-blue-950 transition"
+              
             >
               Book Now
             </button>

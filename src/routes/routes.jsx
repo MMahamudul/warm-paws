@@ -7,6 +7,8 @@ import ServiceDetails from "../pages/ServiceDetails";
 import Signin from "../pages/Signin";
 import SignUp from "../pages/SignUp";
 import AuthLayout from './../layouts/AuthLayout';
+import PrivateRoute from "../provider/PrivateRoute";
+
 
 export const router = createBrowserRouter(([
     {
@@ -21,7 +23,8 @@ export const router = createBrowserRouter(([
             },
             {
                 path: '/services',
-                element:<Services></Services>
+                element:<Services></Services>,
+                loader: ()=>fetch('/petServices.json')
             },
             {
                 path: '/profile',
@@ -34,9 +37,11 @@ export const router = createBrowserRouter(([
 
     },
             {
-                path: '/services/:id',
-                element:<ServiceDetails></ServiceDetails>,
-                loader: ()=>fetch('/petServices.json')
+                path: '/products/:id',
+                element:<PrivateRoute>
+                            <ServiceDetails></ServiceDetails>
+                    </PrivateRoute>,
+                    loader: ()=>fetch('/petServices.json')
             },
             
              {

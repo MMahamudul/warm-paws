@@ -1,28 +1,44 @@
 import React from 'react';
 import MyContainer from '../component/MyContainer';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { use } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import toast from "react-hot-toast";
 
 const SignUp = () => {
-  const {createUser, setUser} = use(AuthContext);
+  const {createUser, setUser, updateUser} = use(AuthContext);
+  const navigate = useNavigate()
 
   const handleSignUp = (e) =>{
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    /* const photo = form.photo.value;
-    const name= form.name.value; */
+    const photo = form.photo.value;
+    const name= form.name.value;
   
     createUser(email, password)
     .then((res) => {
+      const user = res.user;
         toast.success('Registration successful');
-        setUser(res.email)
+        updateUser({displayName:name, photoURL: photo})
+        .then(()=>{
+        setUser({...user, displayName:name, photoURL: photo });
+        navigate('/');
+        })
+        .catch((error)=>{
+          const errorMessage = error.message;
+          const errorCode = error.code;
+        toast.error(errorCode, errorMessage);
+        setUser(user);
+        })
+        
         
       })
-    .then(error=>toast.error(error.message))
+    .catch((error)=>{
+      const errorMessage = error.message;
+      toast.error(errorMessage)
+    })
     
 
   }
