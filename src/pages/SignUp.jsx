@@ -4,10 +4,14 @@ import { Link, useNavigate } from 'react-router';
 import { use } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import toast from "react-hot-toast";
+import { useState } from 'react';
+import { FaEye } from 'react-icons/fa';
+import { IoIosEyeOff } from 'react-icons/io';
 
 const SignUp = () => {
   const {createUser, setUser, updateUser} = use(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [show, setShow] = useState(false)
 
   const handleSignUp = (e) =>{
     e.preventDefault();
@@ -16,6 +20,14 @@ const SignUp = () => {
     const password = form.password.value;
     const photo = form.photo.value;
     const name= form.name.value;
+
+    const passRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if(!passRegex.test(password)){
+      toast.error("Password must be at least 6 characters long,contain at least a lowercase and a uppercase letter ")
+      return;
+
+    }
+
   
     createUser(email, password)
     .then((res) => {
@@ -50,7 +62,7 @@ const SignUp = () => {
       
       
     </div>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 ">
+    <div className="card bg-base-100 w-full max-w-sm shrink-0 border-2 border-blue-50 shadow-xl rounded-md">
       <h1 className="text-lg text-center mt-2 py-2">Register Account</h1>
       <form onSubmit= {handleSignUp} className="card-body">
         <fieldset className="fieldset">
@@ -75,13 +87,21 @@ const SignUp = () => {
           name="photo" 
           placeholder="Photo Url"
           required />
-          <label className="label">Password</label>
+          <div className='relative'>
+             <label className="label">Password</label>
           <input 
-          type="password" 
+          type={show ? 'text' : 'password'}
           className="input" 
           name="password" 
           placeholder="Password"
           required />
+          <span onClick={()=>setShow(!show)} className='absolute right-[24px] top-[36px] z-50'>
+            {show ? <FaEye />: <IoIosEyeOff />}
+            
+            </span>
+
+          </div>
+         
           <button type="submit" className="btn mr-3 bg-blue-900 text-white my-2 px-6 py-2 text-sm hover:bg-blue-800 transition">Register</button>
           <p className='text-center my-2'>Already have an account?</p>
           <p>If you already have an account with us, please login at the <Link to="/auth/signin" className=" text-blue-600 ">login page</Link>.</p>
