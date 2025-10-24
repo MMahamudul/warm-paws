@@ -8,6 +8,7 @@ import Signin from "../pages/Signin";
 import SignUp from "../pages/SignUp";
 import AuthLayout from './../layouts/AuthLayout';
 import PrivateRoute from "../provider/PrivateRoute";
+import Loading from "../pages/Loading";
 
 
 export const router = createBrowserRouter(([
@@ -19,12 +20,14 @@ export const router = createBrowserRouter(([
             {
                 index: true,
                 element:<Home></Home>,
-                loader: ()=>fetch('/petServices.json')
+                loader: ()=>fetch('/petServices.json'),
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/services',
                 element:<Services></Services>,
-                loader: ()=>fetch('/petServices.json')
+                loader: ()=>fetch('/petServices.json'),
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/profile',
@@ -41,7 +44,8 @@ export const router = createBrowserRouter(([
                 element:<PrivateRoute>
                             <ServiceDetails></ServiceDetails>
                     </PrivateRoute>,
-                    loader: ()=>fetch('/petServices.json')
+                    loader: ()=>fetch('/petServices.json'),
+                    hydrateFallbackElement: <Loading></Loading>
             },
             
              {
