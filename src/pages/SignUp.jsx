@@ -16,7 +16,7 @@ const SignUp = () => {
 
   const handleGoogleLogIn = () =>{
     googleSignIn()
-    .then((res)=>{console.log(res.user);
+    .then(()=>{
       navigate('/');
     })
     .catch((error)=>{

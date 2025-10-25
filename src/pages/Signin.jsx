@@ -24,7 +24,8 @@ const Signin = () => {
 
   const handleGoogleLogIn = () =>{
     googleSignIn()
-    .then((res)=>{console.log(res.user);
+    .then(()=>{
+      
       navigate('/');
     })
     .catch((error)=>{
@@ -68,7 +69,7 @@ const handleForgotPasswordRedirect = () => {
 
   /* const handleForgotPassword = ()=>{
     const email = emailRef.current.value;
-    console.log(email)
+   
     passwordReset(email)
     .then(()=>{
       toast.success('A Password Reset Link Has Been Sent to Your Email Address')
