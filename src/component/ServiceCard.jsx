@@ -1,48 +1,50 @@
 import React from 'react';
-import { FaStar } from 'react-icons/fa';
+import { IoMdStarOutline } from 'react-icons/io';
+import { RiMoneyEuroCircleLine } from 'react-icons/ri';
 import { Link } from 'react-router';
 
-const ServiceCard = ({service}) => {
-    /* const {
-      } = service; */
-    const {image,description, serviceName, rating, price, id } = service;
-    return (
-        <div >
-            <div className="max-w-sm bg-[#b3d9e6] shadow-md overflow-hidden h-[450px]">
-  
-  <img
-    src={image}
-    alt="Dog walking"
-    className="w-full h-56 object-cover"
-  />
 
-  
-  <div className="p-6">
-    <h2 className="text-xl font-semibold text-gray-800 mb-2">{serviceName}</h2>
-    <p className="text-gray-700 leading-relaxed text-sm mb-5">
-      {description}
-    </p>
+const ServiceCard = ({ service }) => {
+  const { image, description, serviceName, rating, price, id } = service;
 
-    <Link to= {`/products/${id}`} className="btn bg-blue-900 text-white px-5 py-2 text-sm font-medium hover:bg-blue-950 rounded-full">
-      View Details
-    </Link>
+  return (
+    <div className="bg-[#e6f3f8] shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+      
+      
+      <img
+        src={image}
+        alt={serviceName}
+        className="w-full h-48 sm:h-52 md:h-56 object-cover"
+      />
 
-    <div className='flex justify-between mt-4'>
-        <h6 className='text-blue-950 font-bold'>Rating: {rating}</h6>
-        <h6 className='text-blue-950 font-bold'>Price: {price}€</h6>
-    </div>
-
-    
-
-    
-  </div>
-</div>
-
+      
+      <div className="p-4 sm:p-5 flex flex-col justify-between flex-grow">
+        <div>
+          <h2 className="text-lg sm:text-xl font-semibold text-blue-950 mb-2 line-clamp-1">
+            {serviceName}
+          </h2>
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4 line-clamp-3">
+            {description}
+          </p>
         </div>
-    );
+
+        
+        <div className="mt-auto">
+          <Link
+            to={`/products/${id}`}
+            className="inline-block bg-blue-900 text-white px-4 py-2 text-sm rounded-full hover:bg-blue-950 transition"
+          >
+            View Details
+          </Link>
+
+          <div className="flex flex-row justify-between mt-3 text-sm sm:text-base font-semibold text-blue-950">
+            <span>Rating: {rating}</span>
+            <span>Price: {price}€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ServiceCard;
-
-
-    

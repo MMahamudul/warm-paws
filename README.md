@@ -14,3 +14,15 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Project Name:  WarmPaws
+Purpose: A website to help users to explore pet care services, winter pet clothing, grooming options, and expert tips — all in one friendly interface.
+Key Feature: All in one platform. Easy access and discount for members.
+npm packages: 
+○	React-Spring
+○	react-hot-toast
+○	swiper
+○	firebase
+○	tailwind CSS
+
+
