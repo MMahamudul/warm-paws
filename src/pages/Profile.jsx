@@ -88,6 +88,7 @@ const Profile = () => {
                   name="name"
                   placeholder="Enter your name"
                   className="w-full border border-blue-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
                 />
               </div>
 
@@ -100,6 +101,7 @@ const Profile = () => {
                   name="photo"
                   placeholder="Enter photo URL"
                   className="w-full border border-blue-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
                 />
               </div>
 
