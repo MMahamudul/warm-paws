@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import MyContainer from '../component/MyContainer';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { use } from 'react';
@@ -19,6 +19,7 @@ const Signin = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
+ const emailRef = useRef(null)
   
 
   const handleGoogleLogIn = () =>{
@@ -58,6 +59,25 @@ const Signin = () => {
     
 
   }
+
+
+const handleForgotPasswordRedirect = () => {
+  const email = emailRef.current.value; // get the current email typed
+  navigate('/auth/forgot-password', { state: { email } });
+};
+
+  /* const handleForgotPassword = ()=>{
+    const email = emailRef.current.value;
+    console.log(email)
+    passwordReset(email)
+    .then(()=>{
+      toast.success('A Password Reset Link Has Been Sent to Your Email Address')
+    })
+    .catch((error)=>{
+      toast.error(error.message)
+    })
+
+  } */
     return (
        <MyContainer>
       <div className="hero min-h-screen">
@@ -75,7 +95,8 @@ const Signin = () => {
           type="email" 
           className="input w-full" 
           name="email" 
-          placeholder="Email" 
+          placeholder="Email"
+          ref={emailRef} 
           required />
           <div className='relative'>
             <label className="label">Password</label>
@@ -91,8 +112,15 @@ const Signin = () => {
 
           </div>
           
-          <div><Link className="link link-hover text-blue-900 font-bold my-6">Forgot password?</Link></div>
-          <button className="btn bg-blue-900 text-white rounded-sm py-2 px-6 my-3 text-lg hover:bg-blue-800 transition">Login</button>
+          <div><button
+  type="button"
+  onClick={handleForgotPasswordRedirect}
+  className="link link-hover text-blue-900 font-bold my-6"
+>
+  Forgot password?
+</button>
+      </div>
+          <button  className="btn bg-blue-900 text-white rounded-sm py-2 px-6 my-3 text-lg hover:bg-blue-800 transition">Login</button>
           <Link onClick={handleGoogleLogIn} className="btn btn-outline bg-base-100 text-blue-600 rounded-sm py-2 px-6 my-3 text-lg hover:bg-blue-900 hover:text-white transition"><FcGoogle size={24}/>Login With Google</Link>
           {error && <p className='text-sm text-red-600'>{error}</p>}
           <p className='text-sm text-blue-950 font-semibold'>Don't have an account?</p>

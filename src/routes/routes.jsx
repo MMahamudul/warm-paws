@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp";
 import AuthLayout from './../layouts/AuthLayout';
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
+import ForgotPassword from "../pages/ForgetPassword";
 
 
 export const router = createBrowserRouter(([
@@ -63,6 +64,10 @@ export const router = createBrowserRouter(([
                 ]
                 
             },
+            {
+                path: '/auth/forgot-password',
+                element: <ForgotPassword></ForgotPassword>
+            }
 
 
 
