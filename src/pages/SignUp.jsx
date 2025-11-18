@@ -56,6 +56,7 @@ const SignUp = () => {
           const errorCode = error.code;
         toast.error(errorCode, errorMessage);
         setUser(user);
+        
         })
         
         

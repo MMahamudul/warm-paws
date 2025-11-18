@@ -113,7 +113,8 @@ const handleForgotPasswordRedirect = () => {
 
           </div>
           
-          <div><button
+          <div>
+  <button
   type="button"
   onClick={handleForgotPasswordRedirect}
   className="link link-hover text-blue-900 font-bold my-6"

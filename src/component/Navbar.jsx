@@ -70,7 +70,8 @@ const Navbar = () => {
   alt="profile"
 />
     
-    {user ? <button onClick={handleSignOut} className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">LogOut</button> : <Link to='/auth/signin' className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">Login</Link>}
+    {user ? <button onClick={handleSignOut} className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">LogOut</button> : 
+    <Link to='/auth/signin' className="mr-4 btn bg-blue-900 text-white rounded-full px-6 py-2 text-sm hover:bg-blue-800 transition">Login</Link>}
     
   </div>
 </MyContainer>

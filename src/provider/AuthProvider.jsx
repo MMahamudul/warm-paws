@@ -27,8 +27,6 @@ const AuthProvider = ({children}) => {
         .then(() => {
         toast.success('You Sign Out Successful');
         
-        
-        
       })
     .then(error=>toast.error(error.message))
 
