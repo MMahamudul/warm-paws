@@ -4,13 +4,13 @@ import MyContainer from './MyContainer';
 const WinterCare = () => {
   return (
     <MyContainer>
-      <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white py-12 sm:px-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-center text-blue-900 mb-10">
           Winter Care Tips
         </h2>
 
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           
           <div className="bg-blue-50 flex flex-col sm:flex-row sm:space-x-4 items-center sm:items-start border border-blue-200 p-4 rounded-lg shadow-md hover:shadow-lg transition">
             <img

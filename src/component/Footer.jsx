@@ -13,9 +13,9 @@ const Footer = () => {
             
          
             <div className="flex flex-col items-center md:items-start space-y-3 max-w-xs text-center md:text-left">
-              <div className="flex items-center space-x-2">
-                <img src={flogo} alt="WarmPaws Logo" className="h-16 w-16" />
-                <h2 className="text-xl font-semibold tracking-wide">WarmPaws</h2>
+              <div className="flex flex-col items-center space-x-2">
+                <img src={flogo} alt="WarmPaws Logo" className="h-10 w-10" />
+                <h1 className='font-extrabold text-blue-400 text-sm tracking-wide'>Warm<span className='text-blue-900'>Paws</span></h1>
               </div>
               <p className="text-sm text-blue-800">
                 Caring for your pets with warmth, love, and expert care — because every paw deserves comfort.

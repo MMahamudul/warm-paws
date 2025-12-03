@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "serviceName": "Winter Grooming & Paw Treatment",
+    "serviceName": "Paw Treatment",
     "providerName": "CozyPets Grooming",
     "providerEmail": "hello@cozypets.com",
     "price": 30,
@@ -25,7 +25,7 @@
   },
   {
     "id": 3,
-    "serviceName": "Heated Kennel Setup Service",
+    "serviceName": "Heated Kennel Service",
     "providerName": "WarmPaws Solutions",
     "providerEmail": "contact@warmpaws.com",
     "price": 45,
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "serviceName": "Nutrient-Rich Winter Meal Plan",
+    "serviceName": "Nutrient-Rich Meal Plan",
     "providerName": "HealthyTail Nutrition",
     "providerEmail": "support@healthytail.com",
     "price": 35,
@@ -70,7 +70,34 @@
     "description": "Comprehensive seasonal health examination focusing on joint health, skin, and immune system.",
     "image": "https://i.ibb.co/gM65dcrM/6.jpg",
     "category": "Health"
-  }
+  },
+ {
+  "id": 7,
+  "serviceName": "Pet Training Program",
+  "providerName": "Smart Paws Training Center",
+  "providerEmail": "training@smartpaws.com",
+  "price": 60,
+  "rating": 4.8,
+  "slotsAvailable": 3,
+  "description": "Structured obedience and behavior training for dogs and cats.",
+  "image": "https://i.ibb.co/35dpmjvY/Pet-care.jpg",
+  "category": "Training"
+},
+{
+  "id": 8,
+  "serviceName": "Pet Daycare",
+  "providerName": "Happy Tails Daycare",
+  "providerEmail": "info@happytailsdaycare.com",
+  "price": 40,
+  "rating": 4.8,
+  "slotsAvailable": 4,
+  "description": "Safe indoor daycare with supervised play sessions and warm resting areas.",
+  "image": "https://i.ibb.co/v8dtxd2/Training.jpg",
+  "category": "Daycare"
+}
+
+
+
 ]
 
 

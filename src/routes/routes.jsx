@@ -12,6 +12,8 @@ import Loading from "../pages/Loading";
 import ForgotPassword from "../pages/ForgetPassword";
 import Errorpage from "../pages/ErrorPage";
 import PrivacyPolicy from "../component/PrivacyPolicy";
+import Contact from "../component/Contact";
+import Career from "../component/Career";
 
 
 export const router = createBrowserRouter(([
@@ -35,6 +37,14 @@ export const router = createBrowserRouter(([
             {
                 path: '/profile',
                 element:<Profile></Profile>
+            },
+            {
+                path: '/contact',
+                element:<Contact></Contact>
+            },
+            {
+                path: '/career',
+                element:<Career></Career>
             },
 
         ]

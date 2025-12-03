@@ -1,77 +1,115 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
+
+
+
 const HeroSlider = () => {
   const slides = [
     {
       id: 1,
-      img: "https://i.ibb.co/3yf8H332/dawid-tkocz-Em-Tl8-Wi-Tv-Ss-unsplash.jpg",
-      title: "Cozy Companions",
-      text: "Keep your pets warm and stylish this winter with our soft knitwear.",
+      img: "https://i.ibb.co/Ng532P4F/WP-3.png",
+      title: "Pamper Your Pet With Premium Grooming",
+      text: "Book trusted grooming services for your furry friends — from bathing and nail trimming to full spa sessions, all handled by experienced groomers.",
+      tag: "Grooming Service",
+      button: "Book Grooming",
     },
     {
       id: 2,
-      img: "https://i.ibb.co/GvxpNpTg/j-f-a-Pdn-Pyq1iyg-unsplash.jpg",
-      title: "Winter Adventures",
-      text: "Gear up your furry friends for frosty outdoor fun!",
+      img: "https://i.ibb.co/C3scVrgh/WP-1.jpg",
+      title: "Trusted Veterinary Care, Anytime",
+      text: "Connect with qualified vets for health checkups, vaccinations, and tailored treatment plans to keep your pets happy and healthy all year round.",
+      tag: "Veterinary Care",
+      button: "Find a Vet",
     },
     {
       id: 3,
-      img: "https://i.ibb.co/TSMcBJ8/d-ng-ph-c-h-i-tri-u-7p-CAl-Pq-V3l0-unsplash.jpg",
-      title: "Frosty Fashion",
-      text: "Discover adorable sweaters and coats made for chilly days.",
+      img: "https://i.ibb.co/TD3Bhnt6/WP-2.jpg",
+      title: "Daycare & Training Your Pet Will Love",
+      text: "From puppy socialization to advanced obedience and safe daycare — give your pet the care, attention, and structure they deserve.",
+      tag: "Daycare & Training",
+      button: "Explore Services",
     },
   ];
 
-  
-
-
   return (
-    <div className="w-full h-[80vh] relative mt-5">
+    <div className="w-full h-[80vh] bg-blue-200">
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade"
         spaceBetween={0}
         slidesPerView={1}
-        navigation
+        navigation={{
+          prevEl: ".custom-prev",
+          nextEl: ".custom-next",
+        }}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
         className="h-full"
       >
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <SwiperSlide key={slide.id}>
-            <div
-              className="w-full h-full bg-cover bg-center relative flex items-center justify-center"
-              style={{ backgroundImage: `url(${slide.img})` }}
-            >
-              
-              <div className="absolute inset-0 "></div>
+            <div className="w-full h-full flex items-center bg-[#f4fbfd]">
+              <div className="container mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center gap-10">
+                {/* Text side */}
+                <div
+                  className={`w-full md:w-1/2 ${
+                    index % 2 === 0 ? "order-1" : "order-2 md:order-1"
+                  }`}
+                >
+                  {/* Tag / label */}
+                  <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-slate-900 mb-4">
+                    {slide.tag}
+                  </span>
 
-             
-              <div className="relative z-10 text-center text-blue-100 px-6 drop-shadow-lg">
-                <h2 className="text-4xl md:text-6xl font-bold mb-4 text-blue-100">
-                  {slide.title}
-                </h2>
-                <p className="max-w-xl mx-auto text-lg md:text-xl mb-6 text-blue-200 opacity-90">
-                  {slide.text}
-                </p>
-                <button className="bg-blue-200 text-blue-900 font-semibold py-2 px-6 rounded-md hover:bg-blue-100 hover:text-blue-950 transition">
-                  Shop Winter Collection
-                </button>
+                  {/* Title */}
+                  <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-4 text-slate-900">
+                    {slide.title}
+                  </h2>
+
+                  {/* Description */}
+                  <p className="text-base md:text-lg mb-6 text-slate-800 max-w-md">
+                    {slide.text}
+                  </p>
+
+                  {/* Button */}
+                  <button className="bg-blue-900 text-white font-semibold py-3 px-8 rounded-md hover:rounded-full transition">
+                    {slide.button}
+                  </button>
+                </div>
+
+                {/* Image side */}
+                <div
+                  className={`w-full md:w-1/2 flex justify-center ${
+                    index % 2 === 0 ? "order-2" : "order-1 md:order-2"
+                  }`}
+                >
+                  <img
+                    src={slide.img}
+                    alt={slide.title}
+                    className="w-[320px] h-[260px] md:w-[420px] md:h-[340px] lg:w-[680px] lg:h-[530px] object-cover"
+                  />
+                </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
+        <div className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-50 cursor-pointer text-4xl text-slate-900">
+          ❮
+        </div>
+
+        <div className="custom-next absolute right-6 top-1/2 -translate-y-1/2 z-50 cursor-pointer text-4xl text-slate-900">
+          ❯
+        </div>
       </Swiper>
     </div>
   );
 };
 
 export default HeroSlider;
-
-

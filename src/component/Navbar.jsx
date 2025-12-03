@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router'; 
-import logo from '../assets/logo.png'; 
+import { Link} from 'react-router'; 
+import logo from '../assets/flogo.png'; 
 import icon from '../assets/icon.png'; 
 import MyContainer from './MyContainer';
 import MyLink from './MyLink';
@@ -19,7 +19,7 @@ const Navbar = () => {
 
   }
     return (
-        <div className=''>
+        <div className='bg-[#eaf7fb] sticky top-0 z-50 '>
             <MyContainer className="navbar ">
               {/* {user && user.email} */}
   <div className="navbar-start ">
@@ -41,9 +41,12 @@ const Navbar = () => {
         </li>
       </nav>
     </div>
-    <div className='flex items-center gap-2'>
+    <div className='flex items-center justify-center flex-col'>
       
-        <img className="w-[180px] h-[65px] " src={logo} alt="" />
+        <Link to='/'><img className="w-10 h-10 text-blue-900' " src={logo} alt="" /></Link>
+        <h1 className='font-extrabold text-blue-400 text-sm'>Warm<span className='text-blue-900'>Paws</span></h1>
+        
+
          
     </div>
     
@@ -58,8 +61,12 @@ const Navbar = () => {
             <MyLink className="text-lg "to='/services'>Services</MyLink>
         </li>
         <li>
-            <MyLink className="text-lg" to='/profile'>Profile</MyLink>
+            <MyLink className="text-lg" to='/contact'>Contact</MyLink>
         </li>
+        <li>
+            <MyLink className="text-lg" to='/career'>Career</MyLink>
+        </li>
+        
     </nav>
   </div>
   <div className="navbar-end flex gap-2">

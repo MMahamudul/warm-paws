@@ -36,8 +36,8 @@ const WinterEssentials = () => {
 
   return (
     
-    <section className="bg-white py-16 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="bg-white py-16">
+      <div className="mx-auto text-center">
         <h2 className="text-3xl font-bold text-blue-900 mb-10">
            Winter Pet Essentials
         </h2>
