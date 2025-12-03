@@ -7,21 +7,18 @@ const ServiceCard = ({ service }) => {
   const { image, serviceName, rating, price, id } = service;
 
   return (
-    <div className="bg-[#e6f3f8] shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-[300px] w-[300px]">
+    <div className="bg-[#e6f3f8] shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col">
       <img
         src={image}
         alt={serviceName}
-        className="w-full h-30 sm:h-22 md:h-30 object-cover"
+        className="w-full h-40 sm:h-44 md:h-48 object-cover"
       />
 
       <div className="p-4 sm:p-5 flex flex-col justify-between grow">
         <div>
-          <p className="text-xs sm:text-xl  text-blue-950 mb-2">
+          <p className="text-sm sm:text-lg font-semibold text-blue-950 mb-2 line-clamp-1">
             {serviceName}
           </p>
-         {/*  <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4 line-clamp-3">
-            {description}
-          </p> */}
         </div>
 
         <div className="mt-auto">
@@ -32,9 +29,15 @@ const ServiceCard = ({ service }) => {
             View Details
           </Link>
 
-          <div className="flex flex-row justify-between mt-3 text-sm sm:text-base  text-blue-950">
-            <span>Rating: {rating}</span>
-            <span>Price: {price}€</span>
+          <div className="flex flex-row justify-between items-center mt-3 text-sm sm:text-base text-blue-950">
+            <span className="flex items-center gap-1">
+              <IoMdStarOutline />
+              <span>{rating}</span>
+            </span>
+            <span className="flex items-center gap-1">
+              <RiMoneyEuroCircleLine />
+              <span>{price}€</span>
+            </span>
           </div>
         </div>
       </div>
